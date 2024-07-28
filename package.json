@@ -1,0 +1,30 @@
+{
+  "name": "nextjs-config-package",
+  "version": "1.0.19",
+  "description": "A package to manage ESLint, Stylelint, cspell, Prettier configurations, and Git hooks for Next.js projects",
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "node scripts/postinstall.js",
+    "prepare": "husky"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^7.17.0",
+    "commitlint": "^12.1.4",
+    "copyfiles": "^2.4.1",
+    "cspell": "^6.31.3",
+    "eslint": "^8.57.0",
+    "eslint-plugin-import": "^2.29.1",
+    "prettier": "^3.3.3",
+    "stylelint": "^14.16.1"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{css,scss}": [
+      "stylelint --fix",
+      "prettier --write"
+    ]
+  }
+}
